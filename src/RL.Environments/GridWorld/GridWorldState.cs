@@ -5,12 +5,13 @@ using RL.Core;
 
 namespace RL.Environments
 {
-    public class RandomWalkState : IState
+    public class GridWalkState : IState
     {
-        private readonly Tuple<int, int> _position;
+        private readonly ValueTuple<int, int> _position;
         private readonly bool _terminal;
+        private string _content = " ";
         // readonly float Reward { get; private set; }
-        public RandomWalkState(Tuple<int, int> position, bool terminal/* , float reward */)
+        public GridWalkState(ValueTuple<int, int> position, bool terminal/* , float reward */)
         {
             // Reward = reward;
             _terminal = terminal;
@@ -29,9 +30,13 @@ namespace RL.Environments
 
         public override string ToString()
         {
-            return base.ToString();
+            return _content;
         }
 
+        public void SetContent(string c)
+        {
+            _content = c;
+        }
         public bool IsTerminal()
         {
             return _terminal;

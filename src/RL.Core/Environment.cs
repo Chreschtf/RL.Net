@@ -8,7 +8,8 @@ namespace RL.Core
         public abstract void Reset();
         public abstract void Step();
         public abstract void Render();
-        public abstract int[] GetLegalActions(Agent agent);
+        public abstract List<int> GetLegalActions();
+        // public abstract List<T> GetLegalActions<T>(List<T> legalActions);
         public abstract void RunTrajectory();
 
         public abstract bool IsTerminal();

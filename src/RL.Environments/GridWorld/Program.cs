@@ -10,7 +10,9 @@ namespace RL.Environments
         {
             var agent = new RandomAgent();
 
-            var e = new GridWorldEnvironment(5, 5, agent);
+            var e = new GridWorldEnvironment(2, 2);
+            e.SetAgent(agent);
+            e.RunTrajectory();
         }
     }
 }
